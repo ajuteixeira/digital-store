@@ -1,0 +1,97 @@
+{
+    "brands": [
+        {
+            "brand_id": 1,
+            "brand_name": "Nike"
+        },
+        {
+            "brand_id": 2,
+            "brand_name": "Olimpikus"
+        },
+        {
+            "brand_id": 3,
+            "brand_name": "Puma"
+        },
+        {
+            "brand_id": 4,
+            "brand_name": "Balenciaga"
+        },
+        {
+            "brand_id": 5,
+            "brand_name": "Smolder"
+        }
+    ],
+    "categories": [
+        {
+            "category_id": 1,
+            "category_name": "Esporte e lazer"
+        },
+        {
+            "category_id": 2,
+            "category_name": "Casual"
+        },
+        {
+            "category_id": 3,
+            "category_name": "Utilitário"
+        },
+        {
+            "category_id": 4,
+            "category_name": "Corrida"
+        }
+    ],
+    "genders": [
+        {
+            "gender_id": 1,
+            "gender_name": "Masculino"
+        },
+        {
+            "gender_id": 2,
+            "gender_name": "Feminino"
+        },
+        {
+            "gender_id": 3,
+            "gender_name": "Unisex"
+        }
+    ],
+    "products" : [
+        {
+            "product_id": 1,
+            "product_name": "Produto 1",
+            "product_price": 100,
+            "product_discount": 30,
+            "category_id": 1,
+            "category_name": "Esporte e lazer",
+            "brand_id": 1,
+            "brand_name": "Nike",
+            "gender_id": 1,
+            "gender_name": "Masculino",
+            "review_rate": 5
+        },
+        {
+            "product_id": 2,
+            "product_name": "Produto 2",
+            "product_price": 100,
+            "product_discount": 0,
+            "category_id": 4,
+            "category_name": "Corrida",
+            "brand_id": 2,
+            "brand_name": "Olimpikus",
+            "gender_id": 1,
+            "gender_name": "Masculino",
+            "review_rate": 4
+        },
+        {
+            "product_id": 3,
+            "product_name": "Produto 3",
+            "product_price": 100,
+            "product_discount": 0,
+            "category_id": 2,
+            "category_name": "Casual",
+            "brand_id": 4,
+            "brand_name": "Balenciaga",
+            "gender_id": 2,
+            "gender_name": "Feminino",
+            "review_rate": 4.5
+        }
+    ]
+}
