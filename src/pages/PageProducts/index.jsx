@@ -80,11 +80,11 @@ const PageProducts = () => {
     function filterItens(filterType) {
         switch (filterType) {
             case 1:
-                return;
+                return setItensFiltrados(products.sort((a, b) => b.review_rate - a.review_rate));
             case 2:
-                return;
+                return setItensFiltrados(products.sort((a, b) => b.product_price - a.product_price));
             case 3:
-                return products.sort((a, b) => b.product_price < a.product_price);
+                return setItensFiltrados(products.sort((a, b) => a.product_price - b.product_price));
         }
     }
 
@@ -113,7 +113,7 @@ filterItens(ordenacao);
                             options={tiposDeOrdenacao}
                             optionLabel="name"
                             optionValue="value"
-                            onChange={e => setOrdenacao(e.value)}
+                            onChange={e => setOrdenacao(e.target.value)}
                             className="border-none bg-transparent"
                         />
                     </h6></div>
