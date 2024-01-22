@@ -40,7 +40,9 @@ const PageProducts = () => {
     const [brands, setBrands] = useState([]);
     const [categories, setCategories] = useState([]);
     const [genders, setGenders] = useState([]);
+    const [products, setProducts] = useState([]);
     const [filters, setFilters] = useState([]);
+    const [itensFiltrados, setItensFiltrados] = useState([]);
     const [estado, setEstado] = useState('');
 
     async function getBrands() {
@@ -58,6 +60,11 @@ const PageProducts = () => {
         setGenders(response.data);
     }
 
+    async function getProducts() {
+        const response = await API.get('products')
+        setProducts(response.data);
+    }
+
     function checkSelectedItems(e) {
         let isSelected = e.target.checked;
         let value = e.target.value;
@@ -70,11 +77,27 @@ const PageProducts = () => {
         setFilters([...filters, value]);
     }
 
+    function filterItens(filterType) {
+        switch (filterType) {
+            case 1:
+                return;
+            case 2:
+                return;
+            case 3:
+                return products.sort((a, b) => b.product_price < a.product_price);
+        }
+    }
+
     useEffect(() => {
         getBrands();
         getCategories();
         getGenders();
+        getProducts();
     }, []);
+
+    useEffect(() => {
+filterItens(ordenacao);
+    }, [ordenacao])
 
     return (
         <PageProductsContainer>
@@ -165,9 +188,18 @@ const PageProducts = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="w-9">
-                    <Product classes="w-4" name="nome do produto"
-                    categoryName="categoria" discount="30" price="100" />
+                <div className="w-9 flex flex-wrap gap-3">
+                    {
+                        itensFiltrados.map(p => (
+                            <Product
+                                key={p.product_id}
+                                name={p.product_name}
+                                image={p.product_image}
+                                categoryName={p.category_name}
+                                discount={p.product_discount}
+                                price={p.product_price} />
+                        ))
+                    }
                 </div>
             </div>
 
